@@ -26,6 +26,7 @@ class Exercicio_2_3Test {
             "-3, -3, 0",
             "0, 0, 1",
             "0, 15, 2",
+            "15,15, 1"
     })
     void should_return_valid_result(int start, int end, int expected){
         // arrange
