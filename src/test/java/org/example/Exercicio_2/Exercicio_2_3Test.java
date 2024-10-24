@@ -1,6 +1,8 @@
 package org.example.Exercicio_2;
 
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -12,29 +14,24 @@ class Exercicio_2_3Test {
     }
 
     @Test
-    void should_return_2_if_number_positive_is_3_and_interval_is_negative_3_to_3_and_number_3(){
-        // arrange
-        // act
-        int result = Exercicio_2_3.exercicio_2_3(-3,3);
-        // assert
-        assertEquals(1,result);
+    void exercicio_2_3() {
+        new Exercicio_2_3();
     }
 
-    @Test
-    void shoud_return_3_if_range_negative_10_to_negative_1_and_number_3(){
+    @ParameterizedTest
+    @CsvSource({
+            "1, 10, 0",
+            "-3, 10, 1",
+            "-10, -1, 0",
+            "-3, -3, 0",
+            "0, 0, 1",
+            "0, 15, 2",
+    })
+    void should_return_valid_result(int start, int end, int expected){
         // arrange
         // act
-        int result = Exercicio_2_3.exercicio_2_3(-10,-1);
+        int result = Exercicio_2_3.exercicio_2_3(start,end);
         // assert
-        assertEquals(0,result);
-    }
-
-    @Test
-    void shoud_return_3_if_range_positive_1_to_positive_3_and_number_3(){
-        // arrange
-        // act
-        int result = Exercicio_2_3.exercicio_2_3(1,10);
-        // assert
-        assertEquals(0,result);
+        assertEquals(expected, result);
     }
 }
