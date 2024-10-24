@@ -18,6 +18,15 @@ class Exercicio_2_1Test {
         // act
         int result = Exercicio_2_1.exercicio_2_1(-3, 3);
         // arrange
-        assertEquals(2, result);
+        assertEquals(3, result);
+    }
+
+    @Test
+    void should_return_3_if_range_is_1_to_10(){
+        // assert
+        // act
+        int result = Exercicio_2_1.exercicio_2_1(1, 10);
+        // arrange
+        assertEquals(3, result);
     }
 }
